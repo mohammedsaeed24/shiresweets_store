@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweet Delights | Indian Sweets Shop</title>
+  <meta name="description" content="Traditional Indian sweets: laddus, barfis, gulab jamun, rasgulla, halwa and seasonal specials."/>
+  <!-- Tailwind CDN (no inline JS in this file) -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="font-poppins bg-cream text-brown">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur border-b border-gold/30">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-3">
+        <img src="images/logo.png" alt="Mithaas Delights" class="w-10 h-10 rounded-full shadow" />
+        <span class="text-xl font-bold text-brown">Sweet Delights</span>
+      </a>
+      <nav>
+        <ul class="hidden md:flex items-center gap-6">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#offers" class="nav-link">Special Offers</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          
+        </ul>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg border border-gold/40">☰</button>
+      </nav>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-gold/30 bg-cream">
+      <a class="mobile-link" href="#home">Home</a>
+      <a class="mobile-link" href="#about">About</a>
+      <a class="mobile-link" href="#menu">Menu</a>
+      <a class="mobile-link" href="#offers">Special Offers</a>
+      <a class="mobile-link" href="#gallery">Gallery</a>
+      <a class="mobile-link" href="#contact">Contact</a>
+      <a class="mobile-link" href="admin.html">Admin</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative">
+    <img src="images/banner.jpg" alt="Sweets Banner" class="w-full h-[60vh] object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-brown/80 to-transparent"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="max-w-7xl mx-auto px-6 text-white">
+        <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow">Where Tradition Meets Taste</h1>
+        <p class="mt-4 max-w-2xl text-lg md:text-xl text-cream/90">Handcrafted Indian sweets made fresh daily with premium ingredients.</p>
+        <a href="#menu" class="mt-6 inline-block px-6 py-3 rounded-xl bg-gold text-brown font-semibold shadow hover:-translate-y-0.5 transition">Explore Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <img src="images/seasonal.jpg" alt="About Mithaas" class="rounded-3xl shadow-lg">
+      <div>
+        <h2 class="section-title">Our Story</h2>
+        <p class="mt-4 text-brown/80 leading-relaxed">Shri Delights is a family-owned sweet shop celebrating the rich culinary heritage of India. From festive laddus to melt-in-your-mouth gulab jamuns, every bite carries a piece of tradition, crafted with love and pure ingredients.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu" class="py-16 bg-cream-2 border-y border-gold/20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="section-title">Sweets Collection</h2>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <button class="chip" data-filter="All">All</button>
+        <button class="chip" data-filter="Laddus">Laddus</button>
+        <button class="chip" data-filter="Barfis">Barfis</button>
+        <button class="chip" data-filter="Gulab Jamun">Gulab Jamun</button>
+        <button class="chip" data-filter="Rasgulla">Rasgulla</button>
+        <button class="chip" data-filter="Halwa">Halwa</button>
+        <button class="chip" data-filter="Seasonal">Seasonal</button>
+      </div>
+      <div id="productGrid" class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section id="offers" class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="section-title">Special Offers</h2>
+      <div id="offersGrid" class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-16 bg-cream-2 border-y border-gold/20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="section-title">Gallery</h2>
+      <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <img src="images/laddus.jpg" class="gallery-img" alt="Laddus">
+        <img src="images/barfis.jpg" class="gallery-img" alt="Barfis">
+        <img src="images/gulab.jpg" class="gallery-img" alt="Gulab Jamun">
+        <img src="images/rasgulla.jpg" class="gallery-img" alt="Rasgulla">
+        <img src="images/halwa.jpg" class="gallery-img" alt="Halwa">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="section-title">Contact Us</h2>
+        <form id="contactForm" class="mt-6 space-y-4">
+          <input class="input" type="text" name="name" placeholder="Name" required>
+          <input class="input" type="email" name="email" placeholder="Email" required>
+          <input class="input" type="tel" name="phone" placeholder="Phone" required>
+          <textarea class="input min-h-[120px]" name="message" placeholder="Your message"></textarea>
+          <button class="btn-primary w-full" type="submit">Send Inquiry</button>
+        </form>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold text-brown">Find Us</h3>
+        <p class="mt-2 text-brown/80">123 Street, Sweet City</p>
+        <div class="mt-4 rounded-2xl overflow-hidden shadow-lg border border-gold/30">
+          <iframe class="w-full h-72" style="border:0" loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160986735!2d72.74109859999999!3d19.0821978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63c1b0b2d49%3A0x5f9b1d7a7!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brown text-cream mt-16">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <h4 class="font-bold text-lg">Shri Delights</h4>
+        <p class="mt-2 text-cream/80">Authentic Indian sweets crafted daily.</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg">Quick Links</h4>
+        <ul class="mt-2 space-y-2 text-cream/80">
+          <li><a class="hover:text-white" href="#home">Home</a></li>
+          <li><a class="hover:text-white" href="#menu">Menu</a></li>
+          <li><a class="hover:text-white" href="#offers">Offers</a></li>
+          <li><a class="hover:text-white" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg">Follow Us</h4>
+        <div class="mt-2 flex gap-3 items-center">
+          <a href="#" aria-label="Facebook" class="icon-link"><img src="assets/facebook.svg" class="w-6 h-6" alt="Facebook"></a>
+          <a href="#" aria-label="Instagram" class="icon-link"><img src="assets/instagram.svg" class="w-6 h-6" alt="Instagram"></a>
+          <a href="#" aria-label="WhatsApp" class="icon-link"><img src="assets/whatsapp.svg" class="w-6 h-6" alt="WhatsApp"></a>
+        </div>
+      </div>
+      <div class="flex items-end">
+        <p class="text-sm text-cream/70">&copy; <span id="year"></span> Shri Delights. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

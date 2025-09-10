@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shri Admin</title>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <link rel="stylesheet" href="admin.css"/>
+</head>
+<body class="bg-cream text-brown font-poppins">
+  <!-- LOGIN -->
+  <div id="loginScreen" class="min-h-screen flex items-center justify-center">
+    <div class="card max-w-md w-full">
+      <h1 class="text-2xl font-extrabold">Admin Login</h1>
+      <p class="text-brown/70 mt-1">Use demo: <b>admin</b> / <b>admin123</b></p>
+      <form id="loginForm" class="mt-6 space-y-3">
+        <input class="input" type="text" name="username" placeholder="Username" required />
+        <input class="input" type="password" name="password" placeholder="Password" required />
+        <button class="btn-primary w-full" type="submit">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="hidden min-h-screen">
+    <aside class="fixed left-0 top-0 h-full w-64 bg-brown text-cream p-5 space-y-4">
+      <div class="text-2xl font-extrabold">Shri Admin</div>
+      <nav class="space-y-2">
+        <button class="side-link" data-screen="overview">Overview</button>
+        <button class="side-link" data-screen="products">Products</button>
+        <button class="side-link" data-screen="offers">Offers</button>
+        <button class="side-link" data-screen="inquiries">Inquiries</button>
+        <button class="side-link" data-screen="users">Users</button>
+      </nav>
+      <button id="logoutBtn" class="mt-6 w-full px-3 py-2 rounded-xl bg-cream text-brown font-bold">Logout</button>
+    </aside>
+
+    <main class="ml-64 p-6">
+      <!-- OVERVIEW -->
+      <section id="screen-overview" class="screen">
+        <h2 class="dash-title">Overview</h2>
+        <div class="grid md:grid-cols-4 gap-4 mt-4">
+          <div class="stat"><div class="stat-label">Products</div><div id="statProducts" class="stat-value">0</div></div>
+          <div class="stat"><div class="stat-label">Categories</div><div id="statCategories" class="stat-value">0</div></div>
+          <div class="stat"><div class="stat-label">Inquiries</div><div id="statInquiries" class="stat-value">0</div></div>
+          <div class="stat"><div class="stat-label">Visitors Today</div><div id="statVisitors" class="stat-value">0</div></div>
+        </div>
+        <div class="card mt-6">
+          <h3 class="font-bold text-lg">Sales/Traffic Overview</h3>
+          <canvas id="overviewChart" width="800" height="300" class="mt-4 w-full"></canvas>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section id="screen-products" class="screen hidden">
+        <div class="flex items-center justify-between">
+          <h2 class="dash-title">Products</h2>
+          <button id="addProductBtn" class="btn-primary">Add Product</button>
+        </div>
+        <div id="productsTable" class="mt-4 overflow-x-auto"></div>
+      </section>
+
+      <!-- OFFERS -->
+      <section id="screen-offers" class="screen hidden">
+        <div class="flex items-center justify-between">
+          <h2 class="dash-title">Offers</h2>
+          <button id="addOfferBtn" class="btn-primary">Add Offer</button>
+        </div>
+        <div id="offersTable" class="mt-4 overflow-x-auto"></div>
+      </section>
+
+      <!-- INQUIRIES -->
+      <section id="screen-inquiries" class="screen hidden">
+        <h2 class="dash-title">Inquiries</h2>
+        <div id="inquiriesTable" class="mt-4 overflow-x-auto"></div>
+      </section>
+
+      <!-- USERS -->
+      <section id="screen-users" class="screen hidden">
+        <div class="flex items-center justify-between">
+          <h2 class="dash-title">Users</h2>
+          <button id="addUserBtn" class="btn-primary">Add User</button>
+        </div>
+        <div id="usersTable" class="mt-4 overflow-x-auto"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>
